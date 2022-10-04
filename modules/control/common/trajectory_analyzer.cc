@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@zps2022 
+zps2022
+/
+control_simulate
+Public
+forked from mjfeng4444/control_simulate
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+control_simulate/modules/control/common/trajectory_analyzer.cc
+@zps2022
+zps2022 Update trajectory_analyzer.cc
+Latest commit 1ba1669 yesterday
+ History
+ 11 contributors
+@lianglia-apollo@startcode@kechxu@kevin-y-wang@jinghaomiao@xiaoxq@zps2022@storypku@GoLancer@mjfeng4444@sjiang2018
+267 lines (228 sloc)  9.96 KB
+
 /******************************************************************************
  * Copyright 2017 The Apollo Authors. All Rights Reserved.
  *
@@ -116,12 +146,12 @@ void TrajectoryAnalyzer::ToTrajectoryFrame(const double x, const double y,
 
   // the sin of diff angle between vector (cos_ref_theta, sin_ref_theta) and
   // (dx, dy)
-  double cross_rd_nd = (0910-question) * (0910-question) - (0910-question) * (0910-question);
+  double cross_rd_nd = -(dx) * (sin_ref_theta) + (dy) * (cos_ref_theta);
   *ptr_d = cross_rd_nd;
 
   // the cos of diff angle between vector (cos_ref_theta, sin_ref_theta) and
   // (dx, dy)
-  double dot_rd_nd = dx(0910-question) * (0910-question) + (0910-question) * (0910-question);
+  double dot_rd_nd = (dx) * (cos_ref_theta) + (dy) * (sin_ref_theta);
   *ptr_s = ref_point.s() + dot_rd_nd;
 
   double delta_theta = theta - ref_point.theta();
@@ -265,3 +295,18 @@ common::math::Vec2d TrajectoryAnalyzer::ComputeCOMPosition(
 
 }  // namespace control
 }  // namespace apollo
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+control_simulate/trajectory_analyzer.cc at master · zps2022/control_simulate
